@@ -1,0 +1,20 @@
+Logfile initialized
+[INFO] logfile = C:\Users\arobinsoniii\My Documents\Titanium Studio Workspace\DevTownHouse\build.log
+[DEBUG] C:\Users\arobinsoniii\AppData\Roaming\Titanium\mobilesdk\win32\1.7.2\android\builder.py simulator DevTownHouse C:\Program Files (x86)\Android\android-sdk C:\Users\arobinsoniii\My Documents\Titanium Studio Workspace\DevTownHouse developertown.houseconfig 6 HVGA
+[INFO] Building DevTownHouse for Android ... one moment
+[INFO] Titanium SDK version: 1.7.2 (07/21/11 09:36 97c3689)
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.030000 seconds on emulator to get ready
+[DEBUG] developertown.houseconfig installed? True
+[INFO] Fastdev server running, deploying in Fastdev mode
+[INFO] Copying project resources..
+[TRACE] COPYING MODIFIED FILE: C:\Users\arobinsoniii\My Documents\Titanium Studio Workspace\DevTownHouse\Resources\Views\ViewController.js => C:\Users\arobinsoniii\My Documents\Titanium Studio Workspace\DevTownHouse\build\android\bin\assets\Resources\Views\ViewController.js
+[INFO] Tiapp.xml unchanged, skipping class generation
+[DEBUG] Processing Android resource drawables
+[INFO] Waiting for SDCard to become available..
+[INFO] Re-launching application ... DevTownHouse
+[INFO] Launching application ... DevTownHouse
+[TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=developertown.houseconfig/.DevtownhouseActivity }
+
