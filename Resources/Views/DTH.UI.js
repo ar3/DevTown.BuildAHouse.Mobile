@@ -72,46 +72,36 @@ CreateUIElements.prototype.homeWindowWithTabs = function() {
 
 };
 
-CreateUIElements.prototype.homeWindowWithoutTabs = function() {
-    var winHome = this.homeWindow();
-    return winHome;
-};
 
 CreateUIElements.prototype.homeWindow = function() {
     _.log('createHomeWindow...');
-    return Ti.UI.createWindow({
-        backgroundColor : '#ccffcc',
+    var home = Ti.UI.createWindow({
         exitOnClose : true, 
         backgroundImage: 'images/devtown_background_blueprint.jpg', 
         titleid: 'welcome_message'
     });
+    
+    return home;
 };
 
 CreateUIElements.prototype.colorWindow = function() {
     _.log('Create.colorWindow...');
     var colorWindow = Ti.UI.createWindow({
         backgroundImage: 'images/devtown_background_blueprint.jpg', 
-        height : 150,
-        fullscreen : true,
-        title : 'Choose Your Colors'
+        titleid : 'color_win_title'
     });
 
-    var closeMeLabel = this.label('Color Window');
-    closeMeLabel.addEventListener('click', function() {
-        colorWindow.close();
-    });
-
-    colorWindow.add(closeMeLabel)
     return colorWindow;
 };
 
-CreateUIElements.prototype.view = function() {
+CreateUIElements.prototype.view = function(overrideOptions) {
     _.log('createSampleView...');
-
-    return Ti.UI.createView({
+    var options = _.merge({
         backgroundColor : '#ffffcc',
-        height : 150, 
-    });
+        height : 150
+    }, overrideOptions || {});
+    
+    return Ti.UI.createView(options);
 };
 
 CreateUIElements.prototype.actionContainerWindow = function() {
@@ -136,15 +126,13 @@ CreateUIElements.prototype.label = function(_labelText) {
     });
 };
 
-CreateUIElements.prototype.button = function(_str, callback) {
-    var newBarButton = Ti.UI.createButton({
-        title: _str,
-        labels : [Ti.UI.createLabel({
-            text : _str
-        })]
-    });
+CreateUIElements.prototype.button = function(_str, _options, _callback) {
+    var options = _.merge({
+        title: _str
+    }, _options || {});
+    var newBarButton = Ti.UI.createButton(options);
 
-    newBarButton.addEventListener('click', callback);
+    newBarButton.addEventListener('click', _callback || function(){_.log('Callback was null, NoOp...');});
     return newBarButton;
 };
 
@@ -160,14 +148,17 @@ CreateUIElements.prototype.barButton = function(_str, callback) {
 };
 
 CreateUIElements.prototype.buttonList = function(_smplTblArray) {
-    var tableView = Ti.UI.createTableView({  });
+    var tableView = Ti.UI.createTableView({ 
+        allowsSelection: true 
+    });
+    
     var curTblRow = null;
     for( i = 0; i < _smplTblArray.length; i++) {
         curTblRow = Ti.UI.createTableViewRow({
             title : _smplTblArray[i].title
         });
         curTblRow.addEventListener('click', _smplTblArray[i].callback);
-        _.log('About to add: ' + curTblRow + ' to ' + tableView);
+        _.log('About to add: ' + JSON.stringify(curTblRow) + ' to ' + JSON.stringify(tableView));
         tableView.appendRow(curTblRow);
     }
     return tableView;

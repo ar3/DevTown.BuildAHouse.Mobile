@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="welcome_message">DeveloperTown's Build-A-House!/</string>
+    <string name="welcome_message">DeveloperTown's Build-A-House!</string>
     <string name="welcome_message_2">Developer Town House Blueprint</string>
     <string name="user_agent_message">user agent set to</string>
     <string name="format_test">Your name is %s</string>
     <string name="base_ui_title">Base UI</string>
-    <string name="colors_win_title">Colors</string> 
+    <string name="colors_win_title">Color Your House</string> 
     <string name="desk_win_title">Desk</string>
     <string name="lighting_win_title">Lighting</string>
 </resources>
